@@ -14,7 +14,7 @@
 \contentsline {subsection}{\numberline {2.9}Reference 参考文献}{12}{subsection.2.9}%
 \contentsline {section}{\numberline {3}Source Code of This Document 本文档的源码}{12}{section.3}%
 \contentsline {subsection}{\numberline {3.1}Main Document File 主文件}{12}{subsection.3.1}%
-\contentsline {subsection}{\numberline {3.2}Sections File 章节文件}{13}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.2}Section File 章节文件}{13}{subsection.3.2}%
 \contentsline {subsection}{\numberline {3.3}Table File 表格文件}{25}{subsection.3.3}%
 \contentsline {subsection}{\numberline {3.4}Figure File 图片文件}{26}{subsection.3.4}%
 \contentsline {subsection}{\numberline {3.5}Listing File 代码文件}{28}{subsection.3.5}%
