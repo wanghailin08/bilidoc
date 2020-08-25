@@ -1,0 +1,32 @@
+\documentclass{bilidoc}
+
+\title{\textbf{双语\LaTeX{}文档案例\\Example of Bilingual \LaTeX{} Document}}
+\author{汪海林}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\vspace{20mm}
+
+\tableofcontents
+
+\newpage
+
+\begin{Abstract}{Bilingual \LaTeX{} Document}{双语\LaTeX{}文档}
+
+    This is an example of a bilingual \href{https://www.latex-project.org/}{\LaTeX{}} document class. This document class is mainly based on \href{https://www.ctan.org/pkg/paracol}{paracol} package, which are able to write left and right bilingual documents. Use \href{http://www.bibtex.org/}{\BibTeX{}} to process references, insert hyperlinks using \href{https://www.ctan.org/pkg/hyperref}{hyperref} package, insert mathematical formulas using \href{https://www.ctan.org/pkg/amstex}{\AMSTeX} Kit, we are able to write professional and beautiful \LaTeX{} documents.
+
+    \switchcolumn
+
+    这是一篇双语\href{https://www.latex-project.org/}{\LaTeX{}}文档类的案例。该文档类主要基于\href{https://www.ctan.org/pkg/paracol}{paracol}宏包，能够实现左右双语对照文档的编写。借助\LaTeX{}的\href{http://www.bibtex.org/}{\BibTeX{}}处理参考文献，\href{https://www.ctan.org/pkg/hyperref}{hyperref}宏包插入超链接，\href{https://www.ctan.org/pkg/amstex}{\AMSTeX}套件处理数学公式等特性，能够编写专业精美的\LaTeX{}文档。
+
+
+\end{Abstract}
+
+\input{sections/getting-started.tex}
+\input{sections/commands-and-environments.tex}
+\input{sections/source-code-of-this-document.tex}
+
+\end{document}
