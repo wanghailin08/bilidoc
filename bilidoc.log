@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020/W32TeX) (preloaded format=xelatex 2020.6.17)  26 AUG 2020 00:22
+This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020/W32TeX) (preloaded format=xelatex 2020.6.17)  10 SEP 2020 12:28
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -7,7 +7,7 @@ entering extended mode
 (./bilidoc.tex
 LaTeX2e <2020-02-02> patch level 5
 L3 programming layer <2020-03-06> (./bilidoc.cls
-Document Class: bilidoc 2020/08/19
+Document Class: bilidoc 2020/09/10
 (c:/texlive/2020/texmf-dist/tex/latex/ctex/ctexart.cls (c:/texlive/2020/texmf-dist/tex/latex/l3kernel/expl3.sty
 Package: expl3 2020-03-06 L3 programming layer (loader) 
  (c:/texlive/2020/texmf-dist/tex/latex/l3backend/l3backend-xdvipdfmx.def
@@ -758,29 +758,16 @@ Package: xkeyval 2014/12/03 v2.7a package option processing (HA)
 )
 \XKV@depth=\count360
 File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
-)) (c:/texlive/2020/texmf-dist/tex/latex/dblfloatfix/dblfloatfix.sty
-Package: dblfloatfix 2012/12/31 v1.0a (JAW)
- (c:/texlive/2020/texmf-dist/tex/latex/base/fixltx2e.sty
-Package: fixltx2e 2016/12/29 v2.1a fixes to LaTeX (obsolete)
-Applying: [2015/01/01] Old fixltx2e package on input line 46.
-
-
-Package fixltx2e Warning: fixltx2e is not required with releases after 2015
-(fixltx2e)                All fixes are now in the LaTeX kernel.
-(fixltx2e)                See the latexrelease package for details.
-
-Already applied: [0000/00/00] Old fixltx2e package on input line 53.
-)
-\@dblbotnum=\count361
-\c@dblbotnumber=\count362
-) (c:/texlive/2020/texmf-dist/tex/latex/fancyvrb/fancyvrb.sty
+)) (c:/texlive/2020/texmf-dist/tex/latex/fancyvrb/fancyvrb.sty
 Package: fancyvrb 2020/01/13 v3.5 verbatim text (tvz,hv)
-\FV@CodeLineNo=\count363
+\FV@CodeLineNo=\count361
 \FV@InFile=\read3
 \FV@TabBox=\box84
-\c@FancyVerbLine=\count364
-\FV@StepNumber=\count365
+\c@FancyVerbLine=\count362
+\FV@StepNumber=\count363
 \FV@OutFile=\write3
+) (c:/texlive/2020/texmf-dist/tex/latex/tools/indentfirst.sty
+Package: indentfirst 1995/11/23 v1.03 Indent first paragraph (DPC)
 )
 
 Package fontspec Info: Font family 'CourierNew(0)' created for font 'Courier
@@ -804,8 +791,8 @@ Package fontspec Info: Font family 'CourierNew(0)' created for font 'Courier
 
 ) (c:/texlive/2020/texmf-dist/tex/xelatex/xecjk/xeCJK-listings.sty
 Package: xeCJK-listings 2020/02/18 v3.8.2 xeCJK patch file for listings
-\l__xeCJK_listings_max_char_int=\count366
-\l__xeCJK_listings_flag_int=\count367
+\l__xeCJK_listings_max_char_int=\count364
+\l__xeCJK_listings_flag_int=\count365
 ) (./bilidoc.aux)
 \openout1 = `bilidoc.aux'.
 
@@ -930,7 +917,7 @@ Package caption Info: listings package is loaded.
 Package caption Info: subfigure package is loaded.
 Package caption Info: End \AtBeginDocument code.
 ABD: EveryShipout initializing macros
-\c@lstlisting=\count368
+\c@lstlisting=\count366
 Package hyperref Info: Link coloring ON on input line 7.
  (c:/texlive/2020/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2019/09/16 v2.46 Cross-referencing by name of section
@@ -939,7 +926,7 @@ Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 ) (c:/texlive/2020/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
-\c@section@level=\count369
+\c@section@level=\count367
 )
 LaTeX Info: Redefining \ref on input line 7.
 LaTeX Info: Redefining \pageref on input line 7.
@@ -948,10 +935,8 @@ LaTeX Info: Redefining \nameref on input line 7.
 \@outlinefile=\write4
 \openout4 = `bilidoc.out'.
 
-
-Redefining \end@dblfloat\ for use with subfigure
 LaTeX Font Info:    Trying to load font information for U+msa on input line 10.
-(c:/texlive/2020/texmf-dist/tex/latex/amsfonts/umsa.fd
+ (c:/texlive/2020/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
 LaTeX Font Info:    Trying to load font information for U+msb on input line 10.
@@ -1009,49 +994,49 @@ File: lstlang3.sty 2020/03/24 1.8d listings language file
 File: lstmisc.sty 2020/03/24 1.8d (Carsten Heinz)
 ))
 LaTeX Font Info:    Font shape `TU/SimSun(0)/m/sl' in size <10> not available
-(Font)              Font shape `TU/SimSun(0)/m/it' tried instead on input line 32.
- [2]) (./sections/commands-and-environments.tex (./listings/abstract.tex) (./listings/paracolumn.tex) [3] (./listings/bilingual-table.tex) (./tables/bilingual-table-example.tex [4]) (./listings/bilingual-figure.tex) (./figures/bilingual-figure-example.tex
+(Font)              Font shape `TU/SimSun(0)/m/it' tried instead on input line 30.
+ [2]) (./sections/commands-and-environments.tex (./listings/abstract.tex) (./listings/paracolumn.tex) [3] (./listings/switchcolumn-crosscolumn-example.tex) (./listings/paracolumn-crosscolumn-example.tex) (./listings/crosscolumn-command-example.tex) (./listings/bilingual-table.tex) (./tables/bilingual-table-example.tex) [4] (./tables/bilingual-table-example.tex) [5] (./listings/bilingual-figure.tex) (./figures/bilingual-figure-example.tex
 File: figures/figure-1.png Graphic file (type bmp)
 <figures/figure-1.png>
-) [5] (./listings/bilingual-subfigure.tex) (./figures/bilingual-subfigure-example.tex
+) (./figures/bilingual-figure-example.tex) (./listings/bilingual-subfigure.tex [6]) (./figures/bilingual-subfigure-example.tex
 File: figures/figure-2a.png Graphic file (type bmp)
 <figures/figure-2a.png>
 File: figures/figure-2b.png Graphic file (type bmp)
 <figures/figure-2b.png>
-) [6] (./listings/side-by-side-charts.tex) (./figures/side-by-side-charts-example.tex [7])
+) (./figures/bilingual-subfigure-example.tex) (./listings/side-by-side-charts.tex) (./figures/side-by-side-charts-example.tex)
 File: figures/figure-3.png Graphic file (type bmp)
 <figures/figure-3.png>
 File: figures/figure-4.png Graphic file (type bmp)
 <figures/figure-4.png>
- (./listings/end-by-end-charts.tex) (./figures/end-by-end-charts-example.tex [8])
+ [7] (./figures/side-by-side-charts-example.tex) (./listings/end-by-end-charts.tex [8]) (./figures/end-by-end-charts-example.tex)
 File: figures/figure-5.png Graphic file (type bmp)
 <figures/figure-5.png>
 File: figures/figure-6.png Graphic file (type bmp)
 <figures/figure-6.png>
- [9] (./figures/combination-of-side-by-side-and-end-by-end-charts.tex)
+ (./figures/end-by-end-charts-example.tex) [9] (./figures/combination-of-side-by-side-and-end-by-end-charts.tex) [10] (./figures/combination-of-side-by-side-and-end-by-end-charts.tex)
 File: figures/figure-7.png Graphic file (type bmp)
 <figures/figure-7.png>
 File: figures/figure-5.png Graphic file (type bmp)
 <figures/figure-5.png>
 File: figures/figure-6.png Graphic file (type bmp)
 <figures/figure-6.png>
- [10] [11]) (./sections/source-code-of-this-document.tex (./bilidoc.tex [12]) (./sections/getting-started.tex [13]) (./sections/commands-and-environments.tex [14] [15] [16] [17] [18] [19] [20] [21] [22] [23]) (./sections/source-code-of-this-document.tex [24]) (./tables/bilingual-table-example.tex [25]) (./figures/bilingual-figure-example.tex) (./figures/bilingual-subfigure-example.tex [26]) (./figures/side-by-side-charts-example.tex) (./figures/end-by-end-charts-example.tex [27]) (./listings/a-minimal-example.tex) [28] (./listings/abstract.tex) (./listings/paracolumn.tex) (./listings/bilingual-table.tex) (./listings/bilingual-figure.tex) (./listings/bilingual-subfigure.tex [29]) (./listings/side-by-side-charts.tex) (./listings/end-by-end-charts.tex)) [30]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 31.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 31.
+ [11]) (./sections/source-code-of-this-document.tex (./bilidoc.tex [12]) (./sections/getting-started.tex) [13] (./sections/commands-and-environments.tex [14] [15] [16] [17] [18] [19] [20] [21] [22] [23]) (./sections/source-code-of-this-document.tex [24]) (./tables/bilingual-table-example.tex [25]) (./figures/bilingual-figure-example.tex) (./figures/bilingual-subfigure-example.tex) (./figures/side-by-side-charts-example.tex) (./figures/end-by-end-charts-example.tex [26]) (./listings/a-minimal-example.tex) (./listings/abstract.tex) (./listings/paracolumn.tex [27]) (./listings/bilingual-table.tex) (./listings/bilingual-figure.tex) (./listings/bilingual-subfigure.tex) (./listings/side-by-side-charts.tex) (./listings/end-by-end-charts.tex [28])) [29]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 30.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 30.
  (./bilidoc.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 31.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 31.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 30.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 30.
 Package rerunfilecheck Info: File `bilidoc.out' has not changed.
-(rerunfilecheck)             Checksum: CF4A716EC6A93D118F664F811D02728E;3983.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 31.
+(rerunfilecheck)             Checksum: 113C9AE281B1F25DAA3A0E6C09F81714;4200.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 30.
  ) 
 Here is how much of TeX's memory you used:
- 30947 strings out of 479418
- 588059 string characters out of 5888105
- 1327848 words of memory out of 5000000
- 47804 multiletter control sequences out of 15000+600000
+ 31142 strings out of 479418
+ 594327 string characters out of 5888105
+ 1348326 words of memory out of 5000000
+ 47982 multiletter control sequences out of 15000+600000
  547637 words of font info for 133 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 78i,13n,153p,1150b,1933s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 80i,13n,154p,1150b,1929s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on bilidoc.pdf (30 pages).
+Output written on bilidoc.pdf (29 pages).

@@ -1,8 +1,6 @@
-\section{Commands and Environments 命令与环境}
+\begin{ParaColumn}[\section{Commands and Environments 命令与环境}]
 
-\subsection{Abstract Environment 摘要环境}
-
-\begin{ParaColumn}
+    \switchcolumn[0]*[\subsection{Abstract Environment 摘要环境}]
 
     \verb"bilidoc" provides a bilingual abstract environment, its basic usage is:
 
@@ -10,11 +8,10 @@
 
     \verb"bilidoc"提供了双语摘要环境，其基本用法为：
 
-\end{ParaColumn}
-
-\input{listings/abstract.tex}
-
-\begin{ParaColumn}
+    \CrossColumnText{
+        \input{listings/abstract.tex}
+    }
+    \switchcolumn*
 
     The parameters in curly brackets are required parameters, and the parameters in square brackets  are optional parameters.  \verb"<Width of 1st Column>" represents the width of the first column, that is, the width of the English abstract content. If this parameter is omitted, the first column width will take its default value \verb"0.60\linewidth".
 
@@ -22,11 +19,7 @@
 
     花括号中的参数为必选参数，方括号中的参数为可选参数。\verb"<Width of 1st Column>"代表首列的宽度，即英文摘要内容的宽度，若省略该参数，则首列宽度取其默认值\verb"0.60\linewidth"。
 
-\end{ParaColumn}
-
-\subsection{ParaColumn Environment 双栏环境}
-
-\begin{ParaColumn}
+    \switchcolumn*[\subsection{ParaColumn Environment 双栏环境}]
 
     The double-column environment \verb"ParaColumn" divides the page into two columns, and the contents of the two columns do not interfere with each other even when the document changes pages. This feature allows us to write bilingual translation documents.  The basic usage of \verb"ParaColumn" environment is:
 
@@ -34,11 +27,10 @@
 
     双栏环境\verb"ParaColumn"将页面分为两栏，两栏的内容互不干扰，即使是在换页的情况下，这种特性允许我们编写双语对照翻译的文档。\verb"ParaColumn"环境的基本用法为：
 
-\end{ParaColumn}
-
-\input{listings/paracolumn.tex}
-
-\begin{ParaColumn}
+    \CrossColumnText{
+        \input{listings/paracolumn.tex}
+    }
+    \switchcolumn*
     
     Same as \verb"Abstract" environment, \verb"<Width of 1st Column>" represents the width of the first column, that is, the width of the English content. If this parameter is omitted, the first column width will take its default value \verb"0.60\linewidth".
 
@@ -52,13 +44,45 @@
 
     \switchcolumn
 
-    带‘*’号的命令\verb"\switchcolumn*"与命令\verb"\switchcolumn"不同的是，当我们使用\verb"\switchcolumn*"从一列切换到另一列时，该命令之后的内容将在该命令之前的内容的最底部对齐，即可实现每一小段顶部分别对齐的效果。
+    带‘*’号的命令~\verb"\switchcolumn*"~与命令\verb"\switchcolumn"不同的是，当我们使用\verb"\switchcolumn*"从一列切换到另一列时，该命令之后的内容将在该命令之前的内容的最底部对齐，即可实现每一小段顶部分别对齐的效果。
 
-\end{ParaColumn}
+    \switchcolumn*
 
-\subsection{BiliTable Environment 双语表格环境}
+    The \verb"\switchcolumn*" command has an optional parameter before and after the'*' sign. The former can specify which column to switch to, and it is indicated by a number starting from 0. The latter can add a column text that spans two columns.  Generally, you can put commands such as \verb"\section" and \verb"\subsection" here to generate the title of the general column. You can also put the environment such as pictures and tables here, but you should put pictures and table codes in  Separate files, and then use the \verb"\input" command to import, otherwise unexpected results may occur.
 
-\begin{ParaColumn}
+    \switchcolumn
+
+    \verb"\switchcolumn*"命令的'*'号的前后各有一个可选参数，前者可以指定具体切换到哪一列，用从0开始的数字表示，后者可以添加跨越两栏的通栏文本，一般可以将\verb"\section"和\verb"\subsection"等命令放到此处以产生通栏的标题，也可将图片和表格等环境放到此处，但你应该将图片和表格代码放到单独的文件，然后用\verb"\input"命令导入，否则可能会出现意想不到的结果。
+
+    \CrossColumnText{
+        \input{listings/switchcolumn-crosscolumn-example.tex}
+    }
+    
+    \switchcolumn*
+
+    The \verb"ParaColumn" environment may also start with a spanning text by specifying it as the optional argument of \verb"\begin{ParaColumn}".
+
+    \switchcolumn
+
+    \verb"ParaColumn"环境同样可以完成这种功能，只需在\verb"\begin{ParaColumn}"命令后添加相应的可选参数。
+
+    \CrossColumnText{
+        \input{listings/paracolumn-crosscolumn-example.tex}
+    }
+
+    \switchcolumn*[\subsection{CrossColumnText Command 跨栏命令}]
+
+    As mentioned earlier, the \verb"\switchcolumn*" command can achieve the function of hurdling, but you cannot add equations here, otherwise an error will occur.  In order to add a hurdle equation, you can use the \verb"\CrossColumnText" command, which can also generate equation titles, tables and pictures.
+
+    \switchcolumn
+
+    前面提到，\verb"\switchcolumn*"命令可以实现跨栏的功能，但不能在此处添加公式，否则会产生错误。为了添加跨栏公式，可以使用\verb"\CrossColumnText"命令，该命令同样可以产生跨栏的标题、表格和图片等内容。
+
+    \CrossColumnText{
+        \input{listings/crosscolumn-command-example.tex}
+    }
+
+    \switchcolumn*[\subsection{BiliTable Environment 双语表格环境}]
 
     The bilingual table environment \verb"BiliTable" can generate a table with bilingual titles, see \enautoref{table:bilingual-table-example}, its basic usage is:
     
@@ -66,26 +90,25 @@
 
     双语表格环境\verb"BiliTable"可以得到带双语标题的表格，见\cnautoref{table:bilingual-table-example}所示，其基本用法为：
 
-\end{ParaColumn}
-
-\input{listings/bilingual-table.tex}
-
-\begin{ParaColumn}
+    \CrossColumnText{
+        \input{listings/bilingual-table.tex}
+        \input{tables/bilingual-table-example.tex}
+    }
+    \switchcolumn*
 
     The optional parameter \verb"Options" controls the direction, hurdles, floating options and labels of the \verb"BiliTable" environment, different options are separated by commas. The following describes the options defined by the \verb"BiliTable" environment, The option on the right is its default value.
 
     \switchcolumn
 
-    可选参数\verb"Options"控制\verb"BiliTable"环境的方向、跨栏、浮动选项以及标签，不同选项间用英文逗号隔开。以下将描述了\verb"BiliTable"环境定义的选项，右侧选项为其默认值。
+    可选参数\verb"Options"控制\verb"BiliTable"环境的方向、跨栏、浮动选项以及标签，不同选项间用英文逗号隔开。下面描述了\verb"BiliTable"环境定义的选项，右侧选项为其默认值。
 
-\end{ParaColumn}
-
-\vspace{3pt}
-\noindent
-\OptionsShow{orientation}{<vertical|horizontal|v|h>}{vertical}
-\vspace{3pt}
-
-\begin{ParaColumn}
+    \CrossColumnText{
+        \vspace{3pt}
+        \noindent
+        \OptionsShow{orientation}{<vertical|horizontal|v|h>}{vertical}
+        \vspace{3pt}
+    }
+    \switchcolumn*
 
     The \ColorCode{orientation} option is used to control the direction of the table. When the \ColorCode{orientation} option is \verb"horizontal", a single-page horizontal table will be generated.
 
@@ -93,14 +116,13 @@
 
     \ColorCode{orientation}选项用于控制表格的方向，当\ColorCode{orientation}选项为\verb"horizontal"时，将生成单页的横向表格。
 
-\end{ParaColumn}
-
-\vspace{3pt}
-\noindent
-\OptionsShow{crosscolumn}{<true|false>}{false}
-\vspace{3pt}
-
-\begin{ParaColumn}
+    \CrossColumnText{
+        \vspace{3pt}
+        \noindent
+        \OptionsShow{crosscolumn}{<true|false>}{false}
+        \vspace{3pt}
+    }
+    \switchcolumn*
 
     The \ColorCode{crosscolumn} option is used to generate a cross-column table, which is equivalent to the \verb"table*" environment.
     
@@ -108,14 +130,13 @@
 
     \ColorCode{crosscolumn}选项用于产生跨栏表格，相当于\verb"table*"环境。
 
-\end{ParaColumn}
-
-\vspace{3pt}
-\noindent
-\OptionsShow{label}{<name>}{}
-\vspace{3pt}
-
-\begin{ParaColumn}
+    \CrossColumnText{
+        \vspace{3pt}
+        \noindent
+        \OptionsShow{label}{<name>}{}
+        \vspace{3pt}
+    }
+    \switchcolumn*
 
     The \ColorCode{label} option is used to create label for the table, which is equivalent to defining \verb"\label{name}". You can use \verb"\ref{name}" to reference the table from other places.
 
@@ -123,24 +144,22 @@
 
     \ColorCode{label}选项用于产生标签，相当于定义了\verb"\label{name}"命令，可从其它地方使用\verb"\ref{name}"引用该表格。
 
-\end{ParaColumn}
+    \switchcolumn*
 
-\vspace{3pt}
-\noindent
-\OptionsShow{float}{[!]<\emph{subset of} htbp> \emph{or} <H>}{htbp}
-\vspace{3pt}
-
-\begin{ParaColumn}
-
-    The \ColorCode{float} option defines the allowed positions of the float table, and the \verb"H" option provided by the \verb"float" package is used to create a non-floating table.
+    The optional parameter \verb"FloatPlacement" is used to control the floating options of the float table, and its default value is \verb"htbp", the \verb"H" option provided by the \verb"float" package is used to create a non-floating table.
 
     \switchcolumn
 
-    \ColorCode{float}选项定义浮动表格环境的允许位置，\verb"float"宏包提供的\verb"H"选项用于产生不浮动的表格。
+    可选参数\verb"FloatPlacement"用于控制浮动体的浮动选项，其默认值为\verb"htbp"，\verb"float"宏包提供的\verb"H"选项用于产生不浮动的表格。
 
-\end{ParaColumn}
-
-\begin{ParaColumn}
+    \CrossColumnText{
+        \vspace{3pt}
+        \noindent
+        \OptionsShow{FloatPlacement}{[!]<\emph{subset of} htbp> \emph{or} <H>}{htbp}
+        \vspace{3pt}
+        \lstinputlisting[language=LaTeX, label=listing:bilingual-table-example]{tables/bilingual-table-example.tex}
+    }
+    \switchcolumn*
 
     The following \verb"listing" is an example of the \verb"BiliTable" environment, and the output result is shown in \enautoref{table:bilingual-table-example}.
 
@@ -148,13 +167,7 @@
 
     下面的\verb"listing"是\verb"BiliTable"环境的一个示例，输出结果见\cnautoref{table:bilingual-table-example}所示。
 
-\end{ParaColumn}
-
-\input{tables/bilingual-table-example.tex}
-
-\subsection{BiliFigure Environment 双语图形环境}
-
-\begin{ParaColumn}
+    \switchcolumn*[\subsection{BiliFigure Environment 双语图形环境}]
 
     The bilingual figure environment \verb"BiliFigure" can generate a figure with bilingual titles, see \enautoref{figure:bilingual-figure-example}, its basic usage is:
     
@@ -162,11 +175,11 @@
 
     双语图形环境\verb"BiliFigure"可以得到带双语标题的图形，如\cnautoref{figure:bilingual-figure-example}所示，其基本用法为：
 
-\end{ParaColumn}
-
-\input{listings/bilingual-figure.tex}
-
-\begin{ParaColumn}
+    \CrossColumnText{
+        \input{listings/bilingual-figure.tex}
+        \input{figures/bilingual-figure-example.tex}
+    }
+    \switchcolumn*
 
     The usage of the optional parameters of the bilingual picture  \verb"BiliFigure" environment \verb"Options" and the \verb"BiliTable" environment are basically the same, so I won't repeat them here.
 
@@ -182,11 +195,10 @@
 
     下面的\verb"listing"是\verb"BiliFigure"环境的一个示例，输出结果见\cnautoref{figure:bilingual-figure-example}所示。
 
-\end{ParaColumn}
-
-\input{figures/bilingual-figure-example.tex}
-
-\begin{ParaColumn}
+    \CrossColumnText{
+        \lstinputlisting[language=LaTeX, label=listing:bilingual-figure-example]{figures/bilingual-figure-example.tex}
+    }
+    \switchcolumn*
 
     In addition to inserting a single picture like \enautoref{figure:bilingual-figure-example}, we can also use the \verb"\subfigure" command provided by the \verb"subfigure" package to insert side-by-side subfigures, see \enautoref{figure:bilingual-subfigure-example}, its basic usage is:
 
@@ -194,11 +206,11 @@
 
     除了像\cnautoref{figure:bilingual-figure-example}那样插入单张图片，我们还可以使用\verb"subfigure"宏包的\verb"\subfigure"命令插入并排的子图，如\cnautoref{figure:bilingual-subfigure-example}所示，其基本用法为：
 
-\end{ParaColumn}
-
-\input{listings/bilingual-subfigure.tex}
-
-\begin{ParaColumn}
+    \CrossColumnText{
+        \input{listings/bilingual-subfigure.tex}
+        \input{figures/bilingual-subfigure-example.tex}
+    }
+    \switchcolumn*
 
     The following \verb"listing" is an example of \verb"subfigure", and the output result is shown in \enautoref{figure:bilingual-subfigure-example}.
 
@@ -206,13 +218,10 @@
     
     下面的\verb"listing"是\verb"subfigure"的一个示例，输出结果见\cnautoref{figure:bilingual-subfigure-example}所示。
 
-\end{ParaColumn}
-
-\input{figures/bilingual-subfigure-example.tex}
-
-\subsection{Side-by-Side Charts Command 图表横排命令}
-
-\begin{ParaColumn}
+    \CrossColumnText{
+        \lstinputlisting[language=LaTeX, label=listing:bilingual-subfigure-example]{figures/bilingual-subfigure-example.tex}
+    }
+    \switchcolumn*[\subsection{Side-by-Side Charts Command 图表横排命令}]
 
     The horizontal chart command \verb"\sidebyside" can typeset horizontal charts, see \enautoref{figure:side-by-side-charts-example-1} and \enautoref{figure:side-by-side-charts-example-2}, its basic usage is:
 
@@ -220,11 +229,11 @@
 
     图表横排命令\verb"\sidebyside"可以排版横向并排的图表，如图\cnautoref{figure:side-by-side-charts-example-1}和\cnautoref{figure:side-by-side-charts-example-2}所示，其基本用法为：
 
-\end{ParaColumn}
-
-\input{listings/side-by-side-charts.tex}
-
-\begin{ParaColumn}
+    \CrossColumnText{
+        \input{listings/side-by-side-charts.tex}
+        \input{figures/side-by-side-charts-example.tex}
+    }
+    \switchcolumn*
 
     The optional parameter \verb"Options" of the \verb"sidebyside" command provides \ColorCode{verticalalignment}, \ColorCode{crosscolumn} and \ColorCode{float} option.  The usage of \ColorCode{crosscolumn} and \ColorCode{float} option is the same as that of the \verb"BiliTable" and \verb"BiliFigure" environment.
 
@@ -232,14 +241,13 @@
 
     \verb"\sidebyside"命令的可选参数\verb"Options"提供了\ColorCode{verticalalignment}、\ColorCode{crosscolumn}和\ColorCode{float}选项。\ColorCode{crosscolumn}以及\ColorCode{float}选项与\verb"BiliTable"和\verb"BiliFigure"环境对应选项的用法相同。
 
-\end{ParaColumn}
-
-\vspace{3pt}
-\noindent
-\OptionsShow{verticalalignment}{<top|center|bottom|t|c|b>}{bottom}
-\vspace{3pt}
-
-\begin{ParaColumn}
+    \CrossColumnText{
+        \vspace{3pt}
+        \noindent
+        \OptionsShow{verticalalignment}{<top|center|bottom|t|c|b>}{bottom}
+        \vspace{3pt}
+    }
+    \switchcolumn*
 
     \ColorCode{verticalalignment} controls the vertical alignment of the horizontal chart.
     
@@ -247,9 +255,7 @@
 
     \ColorCode{verticalalignment}控制横排图表的垂直对齐方式。
 
-\end{ParaColumn}
-
-\begin{ParaColumn}
+    \switchcolumn*
 
     The following \verb"listing" is an example of \verb"sidebyside" command, and the output result is shown in \enautoref{figure:side-by-side-charts-example-1} and \enautoref{figure:side-by-side-charts-example-2}.
 
@@ -257,13 +263,10 @@
 
     下面的\verb"listing"是\verb"sidebyside"命令的一个示例，输出结果见\cnautoref{figure:side-by-side-charts-example-1}和\cnautoref{figure:side-by-side-charts-example-2}所示。
 
-\end{ParaColumn}
-
-\input{figures/side-by-side-charts-example.tex}
-
-\subsection{End-by-End Charts Command 图表竖排命令}
-
-\begin{ParaColumn}
+    \CrossColumnText{
+        \lstinputlisting[language=LaTeX, label=listing:side-by-side-charts-example]{figures/side-by-side-charts-example.tex}
+    }
+    \switchcolumn*[\subsection{End-by-End Charts Command 图表竖排命令}]
 
     The vertical chart command \verb"\endbyend" can typeset vertical charts, see \enautoref{figure:end-by-end-charts-example-1} and \enautoref{figure:end-by-end-charts-example-2}, its basic usage is:
 
@@ -271,11 +274,11 @@
 
     图表竖排命令\verb"\endbyend"可以排版竖向并排的图表，如\cnautoref{figure:end-by-end-charts-example-1}和\cnautoref{figure:end-by-end-charts-example-2}所示，其基本用法为：
 
-\end{ParaColumn}
-
-\input{listings/end-by-end-charts.tex}
-
-\begin{ParaColumn}
+    \CrossColumnText{
+        \input{listings/end-by-end-charts.tex}
+        \input{figures/end-by-end-charts-example.tex}
+    }
+    \switchcolumn*
 
     The optional parameter \verb"Options" of the \verb"sidebyside" command provides \ColorCode{crosscolumn} and \ColorCode{float} option.  Its usage is the same as that of the corresponding options of \verb"BiliTable" and \verb"BiliFigure". The parameter \verb"{<Width>}" is the width of the vertical chart environment.
 
@@ -291,11 +294,10 @@
 
     下面的\verb"listing"是\verb"sidebyside"命令的一个示例，输出结果见\cnautoref{figure:end-by-end-charts-example-1}和\cnautoref{figure:end-by-end-charts-example-2}所示。
 
-\end{ParaColumn}
-
-\input{figures/end-by-end-charts-example.tex}
-
-\begin{ParaColumn}
+    \CrossColumnText{
+        \lstinputlisting[language=LaTeX, label=listing:end-by-end-charts-example]{figures/end-by-end-charts-example.tex}
+    }
+    \switchcolumn*
 
     There is an interesting question worth discussing here.  Since we nested the \verb"BiliFigure" environment in the \verb"\endbyend" command, it involves the setting of two widths.  The \verb"\linewidth" in the outer \verb"\endbyend" command means that we have created a box with the width of \verb"\linewidth", and the content defined later will be typeset in this box, The horizontal alignment of the chart in the \verb"\endbyend"  command defaults to center alignment, so the final typesetting result is like \enautoref{figure:end-by-end-charts-example-1} and \enautoref{figure:end-by-end-charts-example-2} as shown.  If we change the width in the outer \verb"\endbyend" command to \verb"0.5\linewidth", then we will find that the final typesetting result will be centered in the left half.
 
@@ -311,11 +313,7 @@
 
     我们再来看一下内层\verb"BiliFigure"环境中的宽度。值得注意的是，这里的\verb"\linewidth"在数值与外层\verb"\endbyend"命令的\verb"\linewidth"并不相同。\verb"\linewidth"为命令所处环境的宽度，对于外层\verb"\endbyend"命令，\verb"\linewidth"为\verb"document"环境的宽度，也就是文档版心的宽度，而对于内层\verb"BiliFigure"环境，\verb"\linewidth"为由\verb"\endbyend"命令创建的盒子的宽度，也就是外层\verb"\endbyend"命令的宽度值。如果我们将外层\verb"\endbyend"命令和内层\verb"BiliFigure"环境的宽度选项均改为\verb"0.5\linewidth"，那么我们会发现最终由\verb"BiliFigure"环境创建的图片宽度变成了大约为\verb"0.25\linewidth"。
 
-\end{ParaColumn}
-
-\subsection{Combination of Side-by-Side and End-by-End Charts 横排与竖排图表的组合}
-
-\begin{ParaColumn}
+    \switchcolumn*[\subsection{Combination of Side-by-Side and End-by-End Charts 横排与竖排图表的组合}]
 
     If we need to typeset charts with more complicated position, such as one picture on the left and two pictures on the right, the \verb"\sidebyside" command and \verb"\endbyend" command obviously cannot satisfy us, at this time we can combine the two commands to achieve our purpose.
 
@@ -330,12 +328,12 @@
     \switchcolumn
     
     下面的~\verb"listing"~是~\verb"\sidebyside"~命令和~\verb"\endbyend"~命令结合使用的一个示例，输出结果见\cnautoref{figure:combination-of-side-by-side-and-end-by-end-charts-example-1}$\sim$\cnautoref{figure:combination-of-side-by-side-and-end-by-end-charts-example-3}所示。
-    
-\end{ParaColumn}
 
-\input{figures/combination-of-side-by-side-and-end-by-end-charts.tex}
-
-\begin{ParaColumn}
+    \CrossColumnText{
+        \lstinputlisting[language=LaTeX, label=listing:combination-of-side-by-side-and-end-by-end-charts-example]{figures/combination-of-side-by-side-and-end-by-end-charts.tex}
+        \input{figures/combination-of-side-by-side-and-end-by-end-charts.tex}
+    }
+    \switchcolumn*
 
     Here we will discuss the \verb"float" parameter of the above command again.  since the \verb"\sidebyside" and \verb"\endbyend" commands are based on the paragraph box \verb"minipage" environment, floating environments cannot be created in the box, the \verb"float" The parameter can only be set to the \verb"H" option provided by the \verb"float" package.  
 
@@ -351,11 +349,7 @@
     
     对于上面所述的案列，由于涉及到了\verb"\sidebyside"和\verb"\endbyend"命令的嵌套问题，只有外层命令的\verb"float"参数可以自行设置，内层命令的\verb"float"参数都只能设置为\verb"float"宏包提供的\verb"H"选项。
 
-\end{ParaColumn}
-
-\subsection{Coss Reference 交叉引用}
-
-\begin{ParaColumn}
+    \switchcolumn*[\subsection{Coss Reference 交叉引用}]
 
     This document class has defined \verb"\cnautoref" and \verb"\enautoref" commands so that we can freely switch the cross-reference format in English and Chinese language environments.  \verb"\cnautoref" and \verb"\enautoref" commands accept \verb"label" from \verb"figure", \verb"subfigure", \verb"table", \verb"appendix" and \verb"equation", and automatically generate the corresponding application format, for example, \enautoref{figure:bilingual-figure-example}, \enautoref{figure:2a}, \enautoref{table:bilingual-table-example} et al.
 
@@ -363,11 +357,7 @@
 
     本文档类定义了\verb"\cnautoref"命令以及\verb"\enautoref"命令，以便我们能在英文和中文两种语言环境中自由切换交叉引用的格式。\verb"\cnautoref"命令和\verb"\enautoref"命令接受来自\verb"figure"、\verb"subfigure"、\verb"table"、\verb"appendix"以及\verb"equation"的\verb"label"，自动生成对应的应用格式，例如\cnautoref{figure:bilingual-figure-example}、\cnautoref{figure:2a}、\cnautoref{table:bilingual-table-example}等。
 
-\end{ParaColumn}
-
-\subsection{Reference 参考文献}
-
-\begin{ParaColumn}
+    \switchcolumn*[\subsection{Reference 参考文献}]
 
     For detailed usage of references, please refer to \href{https://www.ctan.org/pkg/natbib}{natbib} package or \href{https://www.ctan.org/pkg/gbt7714}{gbt7714} package.
 

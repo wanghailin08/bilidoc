@@ -1,21 +1,9 @@
-\begin{lstlisting}[language=LaTeX, caption=Side-by-Side Charts Example, label=listing:side-by-side-charts-example]
-\sidebyside[float=!htb]{0.50\linewidth}{
-    \begin{BiliFigure}[float=H,label=figure:side-by-side-charts-example-1]{Relationship between $K_0$, $I_p$ and OCR}{$K_0$,$I_p$和OCR之间的关系}
+\sidebyside[crosscolumn=false][htb]{0.50\linewidth}{
+    \begin{BiliFigure}[label=figure:side-by-side-charts-example-1][H]{Relationship between $K_0$, $I_p$ and OCR}{$K_0$,$I_p$和OCR之间的关系}
         \includegraphics[width=\linewidth]{figures/figure-3}
     \end{BiliFigure}
 }{0.45\linewidth}{
-    \begin{BiliFigure}[float=H,label=figure:side-by-side-charts-example-2]{Trianguler classification chart}{三角分类图}
-        \includegraphics[width=\linewidth]{figures/figure-4}
-    \end{BiliFigure}
-}
-\end{lstlisting}
-
-\sidebyside[float=!htb]{0.50\linewidth}{
-    \begin{BiliFigure}[float=H,label=figure:side-by-side-charts-example-1]{Relationship between $K_0$, $I_p$ and OCR}{$K_0$,$I_p$和OCR之间的关系}
-        \includegraphics[width=\linewidth]{figures/figure-3}
-    \end{BiliFigure}
-}{0.45\linewidth}{
-    \begin{BiliFigure}[float=H,label=figure:side-by-side-charts-example-2]{Trianguler classification chart}{三角分类图}
+    \begin{BiliFigure}[label=figure:side-by-side-charts-example-2][H]{Trianguler classification chart}{三角分类图}
         \includegraphics[width=\linewidth]{figures/figure-4}
     \end{BiliFigure}
 }

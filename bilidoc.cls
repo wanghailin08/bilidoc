@@ -1,4 +1,4 @@
-\ProvidesClass{bilidoc}[2020/08/19]
+\ProvidesClass{bilidoc}[2020/09/10]
 
 \NeedsTeXFormat{LaTeX2e}[1994/06/01]
 
@@ -51,10 +51,10 @@
 \RequirePackage{etoolbox}
 \RequirePackage{verbatim}
 \RequirePackage{xkeyval}
-\RequirePackage{dblfloatfix}
 \RequirePackage{fancyvrb}
+\RequirePackage{indentfirst}
 
-\setcolumnwidth{0.60\linewidth}
+\setcolumnwidth{0.60\textwidth}
 \footnotelayout{m}
 \globalcounter{figure}
 \globalcounter{table}
@@ -69,8 +69,10 @@
   \hangafter=1
   \setlength{\hangindent}{2em}
 }
-\newcommand{\OptionsShow}[3]{\ttfamily\textcolor[RGB]{34,139,34}{#1}=#2\hspace{\fill}#3\normalfont\normalsize}
+\newcommand{\OptionsShow}[3]{\ttfamily\textcolor[RGB]{34,139,34}{#1}~=~#2\hspace{\fill}#3\normalfont\normalsize}
 \newcommand{\ColorCode}[1]{\ttfamily\textcolor[RGB]{34,139,34}{#1}\normalfont}
+\newcommand{\Equation}[1]{\end{ParaColumn} #1 \begin{ParaColumn} \switchcolumn}
+  \newcommand{\CrossColumnText}[1]{\end{ParaColumn} #1 \begin{ParaColumn} \switchcolumn}
 
 \renewcommand{\figureautorefname}{Fig.}
 \newcommand{\subfigureautorefname}{Fig.}
@@ -113,6 +115,20 @@
 \newcommand{\Label}{-NoValue-}
 \newcommand{\Verticalalignment}{b}
 
+% Equation Environment
+
+\makeatletter
+\define@boolkey+{align}{crosscolumn}{
+  \ifKV@align@crosscolumn
+    \renewcommand{\Crosscolumn}{true}
+  \else
+    \renewcommand{\Crosscolumn}{false}
+  \fi
+}{
+  \ClassWarning{bilidoc}{Crosscolumn input for align not exists.}
+}
+\makeatother
+
 
 % Bilingual Table
 % Key Defination
@@ -142,36 +158,46 @@
 \define@key{BiliTable}{label}{
   \renewcommand{\Label}{#1}
 }
-\define@key{BiliTable}{float}[htbp]{
-  \floatplacement{table}{#1}
-}
 \makeatother
+\ProvideDocumentEnvironment{align}{O{}}{
+  \setkeys{align}{crosscolumn=false}
+  \setkeys{align}{#1}
+  \ifthenelse{\equal{\Crosscolumn}{true}}{
+    \end{ParaColumn}
+  }{}
+  \begin{flalign}
+}{
+  \end{flalign}
+  \ifthenelse{\equal{\Crosscolumn}{true}}{
+    \begin{ParaColumn}
+    \switchcolumn
+  }{}
+}
 
-% Default Key Value
-\setkeys{BiliTable}{orientation=vertical,crosscolumn=false,float=htbp}
 % Environment Definition
-\NewDocumentEnvironment{BiliTable}{o m m}{
+\NewDocumentEnvironment{BiliTable}{O{} O{htbp} m m}{
+  \setkeys{BiliTable}{orientation=vertical,crosscolumn=false}
   \setkeys{BiliTable}{#1}
   \ifthenelse{\equal{\Crosscolumn}{true}}{
     \ifthenelse{\equal{\Orientation}{horizontal}}{
-        \begin{sidewaystable*}
+        \begin{sidewaystable*}[#2]
      }{
-        \begin{table*}
+        \begin{table*}[#2]
     }
   }{
     \ifthenelse{\equal{\Orientation}{horizontal}}{
-      \begin{sidewaystable}
+      \begin{sidewaystable}[#2]
     }{
-      \begin{table}
+      \begin{table}[#2]
     }
   }
   \centering
   \renewcommand{\tablename}{Table}
-  \caption{#2}
+  \caption{#3}
   \addtocounter{table}{-1}
   \vspace{-12pt}
   \renewcommand{\tablename}{表}
-  \caption{#3}
+  \caption{#4}
   \vspace{-12pt}
   \ifthenelse{\equal{\Label}{-NoValue-}}{}{
     \label{\Label}
@@ -209,7 +235,7 @@
   \ClassWarning{bilidoc}{Orientation input for BiliFigure not exists.}
 }
 \define@boolkey+{BiliFigure}{crosscolumn}{
-  \ifKV@BiliTable@crosscolumn
+  \ifKV@BiliFigure@crosscolumn
     \renewcommand{\Crosscolumn}{true}
   \else
     \renewcommand{\Crosscolumn}{false}
@@ -220,37 +246,33 @@
 \define@key{BiliFigure}{label}{
   \renewcommand{\Label}{#1}
 }
-\define@key{BiliFigure}{float}[htbp]{
-  \floatplacement{figure}{#1}
-}
 \makeatother
-% Default Key Value
-\setkeys{BiliFigure}{orientation=vertical,crosscolumn=false,float=htbp}
 % Environment Definition
-\NewDocumentEnvironment{BiliFigure}{o m m}{
+\NewDocumentEnvironment{BiliFigure}{O{} O{htbp} m m}{
+  \setkeys{BiliFigure}{orientation=vertical,crosscolumn=false}
   \setkeys{BiliFigure}{#1}
   \ifthenelse{\equal{\Crosscolumn}{true}}{
     \ifthenelse{\equal{\Orientation}{horizontal}}{
-        \begin{sidewaysfigure*}
+        \begin{sidewaysfigure*}[#2]
      }{
-        \begin{figure*}
+        \begin{figure*}[#2]
     }
   }{
     \ifthenelse{\equal{\Orientation}{horizontal}}{
-      \begin{sidewaysfigure}
+      \begin{sidewaysfigure}[#2]
     }{
-      \begin{figure}
+      \begin{figure}[#2]
     }
   }
   \centering
 }{
   \renewcommand{\figurename}{Figure}
   \vspace{-12pt}
-  \caption{#2}
+  \caption{#3}
   \addtocounter{figure}{-1}
   \vspace{-12pt}
   \renewcommand{\figurename}{图}
-  \caption{#3}
+  \caption{#4}
   \ifthenelse{\equal{\Label}{-NoValue-}}{}{
     \label{\Label}
     \renewcommand{\Label}{-NoValue-}
@@ -273,16 +295,13 @@
 % Side by Side Charts
 \makeatletter
 \define@boolkey+{sidebyside}{crosscolumn}{
-  \ifKV@BiliTable@crosscolumn
+  \ifKV@sidebyside@crosscolumn
     \renewcommand{\Crosscolumn}{true}
   \else
     \renewcommand{\Crosscolumn}{false}
   \fi
 }{
   \ClassWarning{bilidoc}{Crosscolumn input for sidebyside not exists.}
-}
-\define@key{sidebyside}{float}[htbp]{
-  \floatplacement{figure}{#1}
 }
 \define@choicekey*+{sidebyside}{verticalalignment}[\val\nr]{top,center,bottom,t,c,b}{
   \ifcase\nr\relax
@@ -303,61 +322,21 @@
 }
 \makeatother
 % Default Key Value
-\setkeys{sidebyside}{crosscolumn=false,float=htbp,verticalalignment=bottom}
-\NewDocumentCommand{\sidebyside}{o m m m m o o o o}{
+\NewDocumentCommand{\sidebyside}{O{} O{htbp} m m m m o o}{
+  \setkeys{sidebyside}{crosscolumn=false,verticalalignment=bottom}
   \setkeys{sidebyside}{#1}
   \ifthenelse{\equal{\Crosscolumn}{true}}{
-    \begin{figure*}
+    \begin{figure*}[#2]
   }{
-      \begin{figure}
+    \begin{figure}[#2]
   }
   \centering
-  \begin{minipage}[\Verticalalignment]{#2} #3 \end{minipage}
-  \begin{minipage}[\Verticalalignment]{#4} #5 \end{minipage}
-  \IfValueT{#6}{
-    \begin{minipage}[\Verticalalignment]{#6} #7 \end{minipage}
-  }
-  \IfValueT{#8}{
-    \begin{minipage}[\Verticalalignment]{#8} #9 \end{minipage}
-  }
-  \ifthenelse{\equal{\Crosscolumn}{true}}{
-      \end{figure*}
-  }{
-      \end{figure}
-  }
-}
-
-% End by End Charts
-\makeatletter
-\define@boolkey+{endbyend}{crosscolumn}{
-  \ifKV@BiliTable@crosscolumn
-    \renewcommand{\Crosscolumn}{true}
-  \else
-    \renewcommand{\Crosscolumn}{false}
-  \fi
-}{
-  \ClassWarning{bilidoc}{Crosscolumn input for BiliTable not exists.}
-}
-\define@key{endbyend}{float}[htbp]{
-  \floatplacement{figure}{#1}
-}
-\makeatother
-% Default Key Value
-\setkeys{endbyend}{crosscolumn=false,float=htbp}
-\NewDocumentCommand{\endbyend}{o m m m o o}{
-  \setkeys{endbyend}{#1}
-  \ifthenelse{\equal{\Crosscolumn}{true}}{
-    \begin{figure*}
-  }{
-    \begin{figure}
-  }
-  \begin{minipage}[b]{#2} #3 \end{minipage}\newline{}
-  \begin{minipage}[b]{#2} #4 \end{minipage}\newline{}
-  \IfValueT{#5}{
-    \begin{minipage}[b]{#2} #5 \end{minipage}\newline{}
-  }
-  \IfValueT{#6}{
-    \begin{minipage}[b]{#2} #6 \end{minipage}\newline{}
+  \begin{minipage}[\Verticalalignment]{#3} #4 \end{minipage}
+  \hspace{\fill}
+  \begin{minipage}[\Verticalalignment]{#5} #6 \end{minipage}
+  \IfValueT{#7}{
+    \hspace{\fill}
+    \begin{minipage}[\Verticalalignment]{#7} #8 \end{minipage}
   }
   \ifthenelse{\equal{\Crosscolumn}{true}}{
     \end{figure*}
@@ -366,15 +345,49 @@
   }
 }
 
+% End by End Charts
+\makeatletter
+\define@boolkey+{endbyend}{crosscolumn}{
+  \ifKV@sidebyside@crosscolumn
+    \renewcommand{\Crosscolumn}{true}
+  \else
+    \renewcommand{\Crosscolumn}{false}
+  \fi
+}{
+  \ClassWarning{bilidoc}{Crosscolumn input for BiliTable not exists.}
+}
+\makeatother
+% Default Key Value
+\NewDocumentCommand{\endbyend}{O{} O{htbp} m m m o}{
+  \setkeys{endbyend}{crosscolumn=false}
+  \setkeys{endbyend}{#1}
+  \ifthenelse{\equal{\Crosscolumn}{true}}{
+    \begin{figure*}[#2]
+  }{
+    \begin{figure}[#2]
+  }
+  \noindent
+  \begin{minipage}[b]{#3} #4 \end{minipage}\newline{}
+  \begin{minipage}[b]{#3} #5 \end{minipage}\newline{}
+  \IfValueT{#6}{
+    \begin{minipage}[b]{#3} #6 \end{minipage}\newline{}
+  }
+  \ifthenelse{\equal{\Crosscolumn}{true}}{
+    \end{figure*}
+  }{
+    \end{figure}
+  }
+}
 
 % ParaColumn
-\NewDocumentEnvironment{ParaColumn}{O{0.60\linewidth}}{
-  \setcolumnwidth{#1}
-  \begin{paracol}{2}
+\NewDocumentEnvironment{ParaColumn}{O{} O{0.60\textwidth}}{
+  \setcolumnwidth{#2}
+  \begin{paracol}{2}[#1]
 }{\end{paracol}}
 
 % Abstract 
-\NewDocumentEnvironment{Abstract}{m m O{0.6\linewidth}}{
+\NewDocumentEnvironment{Abstract}{m m O{0.60\textwidth}}{
+  \setcolumnwidth{#3}
   \newcommand{\enkeywords}{#1}
   \newcommand{\cnkeywords}{#2}
   \section*{Abstract 摘要}
@@ -387,7 +400,7 @@
  
 \newfontfamily\courier{Courier New}
 \lstdefinelanguage{LaTeX}[LaTeX]{TeX}{
-  morekeywords={begin,end,title,author,date,maketitle,section,textbf,switchcolumn,sidebyside,endbyend,textwidth,linewidth,toprule,midrule,bottomrule,includegraphics,subsection,lstinputlisting,subfigure},
+  morekeywords={begin,end,title,author,date,maketitle,section,textbf,switchcolumn,sidebyside,endbyend,textwidth,linewidth,toprule,midrule,bottomrule,includegraphics,subsection,lstinputlisting,subfigure,CrossColumnText},
 }
 \lstset{linewidth=\linewidth,
     %numbers=left, %设置行号位置 

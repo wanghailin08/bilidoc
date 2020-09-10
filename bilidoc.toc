@@ -5,16 +5,17 @@
 \contentsline {section}{\numberline {2}Commands and Environments 命令与环境}{3}{section.2}%
 \contentsline {subsection}{\numberline {2.1}Abstract Environment 摘要环境}{3}{subsection.2.1}%
 \contentsline {subsection}{\numberline {2.2}ParaColumn Environment 双栏环境}{3}{subsection.2.2}%
-\contentsline {subsection}{\numberline {2.3}BiliTable Environment 双语表格环境}{4}{subsection.2.3}%
-\contentsline {subsection}{\numberline {2.4}BiliFigure Environment 双语图形环境}{5}{subsection.2.4}%
-\contentsline {subsection}{\numberline {2.5}Side-by-Side Charts Command 图表横排命令}{6}{subsection.2.5}%
-\contentsline {subsection}{\numberline {2.6}End-by-End Charts Command 图表竖排命令}{8}{subsection.2.6}%
-\contentsline {subsection}{\numberline {2.7}Combination of Side-by-Side and End-by-End Charts 横排与竖排图表的组合}{10}{subsection.2.7}%
-\contentsline {subsection}{\numberline {2.8}Coss Reference 交叉引用}{11}{subsection.2.8}%
-\contentsline {subsection}{\numberline {2.9}Reference 参考文献}{12}{subsection.2.9}%
+\contentsline {subsection}{\numberline {2.3}CrossColumnText Command 跨栏命令}{4}{subsection.2.3}%
+\contentsline {subsection}{\numberline {2.4}BiliTable Environment 双语表格环境}{4}{subsection.2.4}%
+\contentsline {subsection}{\numberline {2.5}BiliFigure Environment 双语图形环境}{6}{subsection.2.5}%
+\contentsline {subsection}{\numberline {2.6}Side-by-Side Charts Command 图表横排命令}{7}{subsection.2.6}%
+\contentsline {subsection}{\numberline {2.7}End-by-End Charts Command 图表竖排命令}{8}{subsection.2.7}%
+\contentsline {subsection}{\numberline {2.8}Combination of Side-by-Side and End-by-End Charts 横排与竖排图表的组合}{10}{subsection.2.8}%
+\contentsline {subsection}{\numberline {2.9}Coss Reference 交叉引用}{11}{subsection.2.9}%
+\contentsline {subsection}{\numberline {2.10}Reference 参考文献}{12}{subsection.2.10}%
 \contentsline {section}{\numberline {3}Source Code of This Document 本文档的源码}{12}{section.3}%
 \contentsline {subsection}{\numberline {3.1}Main Document File 主文件}{12}{subsection.3.1}%
 \contentsline {subsection}{\numberline {3.2}Section File 章节文件}{13}{subsection.3.2}%
 \contentsline {subsection}{\numberline {3.3}Table File 表格文件}{25}{subsection.3.3}%
 \contentsline {subsection}{\numberline {3.4}Figure File 图片文件}{26}{subsection.3.4}%
-\contentsline {subsection}{\numberline {3.5}Listing File 代码文件}{28}{subsection.3.5}%
+\contentsline {subsection}{\numberline {3.5}Listing File 代码文件}{27}{subsection.3.5}%
