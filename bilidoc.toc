@@ -11,7 +11,7 @@
 \contentsline {subsection}{\numberline {2.6}Side-by-Side Charts Command 图表横排命令}{7}{subsection.2.6}%
 \contentsline {subsection}{\numberline {2.7}End-by-End Charts Command 图表竖排命令}{8}{subsection.2.7}%
 \contentsline {subsection}{\numberline {2.8}Combination of Side-by-Side and End-by-End Charts 横排与竖排图表的组合}{10}{subsection.2.8}%
-\contentsline {subsection}{\numberline {2.9}Coss Reference 交叉引用}{11}{subsection.2.9}%
+\contentsline {subsection}{\numberline {2.9}Cross Reference 交叉引用}{11}{subsection.2.9}%
 \contentsline {subsection}{\numberline {2.10}Reference 参考文献}{12}{subsection.2.10}%
 \contentsline {section}{\numberline {3}Source Code of This Document 本文档的源码}{12}{section.3}%
 \contentsline {subsection}{\numberline {3.1}Main Document File 主文件}{12}{subsection.3.1}%

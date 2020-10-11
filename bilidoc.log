@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020/W32TeX) (preloaded format=xelatex 2020.6.17)  10 SEP 2020 12:28
+This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020/W32TeX) (preloaded format=xelatex 2020.6.17)  12 SEP 2020 12:20
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1027,12 +1027,12 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 30.
 Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 30.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 30.
 Package rerunfilecheck Info: File `bilidoc.out' has not changed.
-(rerunfilecheck)             Checksum: 113C9AE281B1F25DAA3A0E6C09F81714;4200.
+(rerunfilecheck)             Checksum: B43160BDF367B88168A18A3528968FE3;4205.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 30.
  ) 
 Here is how much of TeX's memory you used:
  31142 strings out of 479418
- 594327 string characters out of 5888105
+ 594329 string characters out of 5888105
  1348326 words of memory out of 5000000
  47982 multiletter control sequences out of 15000+600000
  547637 words of font info for 133 fonts, out of 8000000 for 9000
