@@ -1,2 +1,2 @@
 # bilidoc
- Example of Biligual Document
+ Documentation of bilidoc
